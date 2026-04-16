@@ -1,0 +1,8 @@
+{
+  "all-hands": { "type": "smart-dispatch", "agents": ["assistant", "dev", "ops"] },
+  "brainstorm": { "type": "broadcast", "agents": [{ "name": "assistant", "model": "claude" }, { "name": "dev", "model": "sonnet" }] },
+  "agent-feed": { "type": "webhook-feed" },
+  "assistant": { "type": "direct", "agent": "assistant", "model": "claude" },
+  "dev":       { "type": "direct", "agent": "dev",       "model": "sonnet" },
+  "ops":       { "type": "direct", "agent": "ops",       "model": "sonnet" }
+}

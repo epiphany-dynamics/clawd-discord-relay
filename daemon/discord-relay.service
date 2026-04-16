@@ -1,0 +1,17 @@
+[Unit]
+Description=Claude Discord Relay
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/clawd-discord-relay
+EnvironmentFile=/root/clawd-discord-relay/.env
+ExecStart=/root/.bun/bin/bun run discord-relay.ts
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
